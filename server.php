@@ -3,22 +3,22 @@
 // inizializziamo dati in versione array di array associativi in php
 $dischi = [ 
         [ 
-            'poster' => 'link',
-            'titleCd' => 'x',
-            'author' => 'billie ellish',
-            'year' => '1990'
+            "poster" => "https://pbs.twimg.com/media/EJXUzRJWsAE3GGl?format=jpg&name=medium",
+            "titleCd" => "Essentials",
+            "author" => "Billie Ellish",
+            "year" => "2020"
         ],
         [
-            'poster' => 'link',
-            'titleCd' => 'j',
-            'author' => 'britney spears',
-            'year' => '1990'
+            "poster" => "https://www.newsic.it/wp-content/uploads/2022/02/rosalia-album-2022.jpg",
+            "titleCd" => "Rosalia",
+            "author" => "2018",
+            "year" => "Motomami"
         ],
         [
-            'poster' => 'link',
-            'titleCd' => 'y',
-            'author' => 'ex-otago',
-            'year' => '1990'
+            "poster" => "https://m.media-amazon.com/images/I/61ooG1rHdtL._AC_SL1500_.jpg",
+            "titleCd" => "Corochinato",
+            "author" => "ex-otago",
+            "year" => "2019"
         ],
     ];
 
@@ -26,9 +26,10 @@ $dischi = [
     $dischiServer = $dischi;
     //definisco il tipo di header del file come json
     header('Content-Type: application/json');
-    //salvo in una variabile la conversione dei dati.php in dati.json
-    $dischiJson = json_encode($dischiServer);
-    //i dati, essendo diventate delle stringhe.json, le vado a caric.
-    file_put_contents('dischiServer.json', $dischiJson);
+    // carico nel file dischiServere.json creato exnovo la stringa convertita in array json
+    file_put_contents('dischiServer.json', json_encode($dischiServer));
+    //così controllo che il file.json qui è effettivamente attivo sul server
+    echo file_get_contents('dischiServer.json');
+
 ?>
 
