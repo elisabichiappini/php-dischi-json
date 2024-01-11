@@ -10,9 +10,9 @@ $dischi = [
         ],
         [
             "poster" => "https://www.newsic.it/wp-content/uploads/2022/02/rosalia-album-2022.jpg",
-            "titleCd" => "Rosalia",
-            "author" => "2018",
-            "year" => "Motomami"
+            "titleCd" => "Motomami",
+            "author" => "Rosalia",
+            "year" => "2018"
         ],
         [
             "poster" => "https://m.media-amazon.com/images/I/61ooG1rHdtL._AC_SL1500_.jpg",
