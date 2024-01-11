@@ -1,0 +1,48 @@
+/*****************
+reset
+******************/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style-type: none;
+}
+
+/*****************
+style
+******************/
+[v-cloak] {
+    display: none;
+}
+
+.img-fluid {
+    width: 100%;
+    display: block;
+}
+
+.album {
+    width: calc((100% - 40px) / 3);
+}
+
+.list-albums {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/*****************
+utilities
+******************/
+.d-flex {
+    display: flex;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.gap-2 {
+    gap: 20px;
+}
