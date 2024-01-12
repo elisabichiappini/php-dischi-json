@@ -16,18 +16,20 @@ $todos = json_decode($string);
     <link href="src/css/style.css" rel="stylesheet">
     <!--/file css-->
 </head>
-<body>
+<body class="bg-dark text-white">
     <!--vue workarea-->
     <div id="app" v-cloak>
-        <h1>List Music</h1>
+        <h1 class="text-center p-3">List Music</h1>
         <!--lista dischi-->
-        <ul class="list-albums d-flex gap-2">
+        <ul class="list-albums d-flex gap-2 flex-wrap">
+            <!--disco e popolamento dati-->
             <li v-for="disco in dischi" class="album text-center">
                 <img :src="disco.poster" :alt="disco.titleCd" class="img-fluid">
-                <h3>{{ disco.author }}</h3>
+                <h3 class="mt-2">{{ disco.author }}</h3>
                 <h4>{{ disco.titleCd }}</h4>
                 <h6>{{ disco.year}}</h6>
             </li>
+            <!--/disco e popolamento dati-->
         </ul>
         <!--/lista dischi-->
     </div>

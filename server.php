@@ -20,6 +20,24 @@ $dischi = [
             "author" => "ex-otago",
             "year" => "2019"
         ],
+        [
+            "poster" => "https://mahmood.it/wp-content/uploads/2021/04/Ghettolimpo.jpg",
+            "titleCd" => "Ghettolimpo",
+            "author" => "Mahmood",
+            "year" => "2021"
+        ],
+        [
+            "poster" => "https://ih1.redbubble.net/image.2793637935.5733/raf,750x1000,075,t,101010:01c5ca27c6.webp",
+            "titleCd" => "The Blaze",
+            "author" => "The Blaze",
+            "year" => "2017"
+        ],
+        [
+            "poster" => "https://www.lafeltrinelli.it/images/0602445671052_0_536_0_75.jpg",
+            "titleCd" => "Sirio",
+            "author" => "Lazza",
+            "year" => "2022"
+        ],
     ];
 
     //salvo una copia dei dati in una variabile
