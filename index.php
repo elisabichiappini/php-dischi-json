@@ -1,48 +1,34 @@
-<?php
-// salvo in variabile i dati in striga che ho acquisito da 
-$string = file_get_contents(__DIR__ . '/dischiServer.json'); //stringhe in formato json
-
-//per rendere fruibile il dato
-$todos = json_decode($string);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP Dischi JSON</title>
-    <!--file css-->
+    <!--File css-->
     <link href="src/css/style.css" rel="stylesheet">
-    <!--/file css-->
+    <!--/File css-->
 </head>
 <body class="bg-dark text-white">
     <!--vue workarea-->
-    <div id="app" v-cloak>
-        <h1 class="text-center p-3">List Music</h1>
-        <!--lista dischi-->
-        <ul class="list-albums d-flex gap-2 flex-wrap">
-            <!--disco e popolamento dati-->
-            <li v-for="disco in dischi" class="album text-center">
-                <img :src="disco.poster" :alt="disco.titleCd" class="img-fluid">
-                <h3 class="mt-2">{{ disco.author }}</h3>
-                <h4>{{ disco.titleCd }}</h4>
-                <h6>{{ disco.year}}</h6>
+    <div id="app" v-cloak class="p-3">
+        <h1 class="text-center p-3">Playlist</h1>
+        <ul class="list-albums d-flex flex-wrap gap-2 text-center">
+            <li v-for="(disco, index) in dischi" class="album no-grow" @click="showDisco(index)">
+                <img :src="disco.poster" :alt="disco.author" class="img-fluid">
+                <h4 class="mt-2">{{ disco.titleCd }}</h4>
+                <h5>{{ disco.author }}</h5>
+                <h6> {{ disco.year }}</h6>
             </li>
-            <!--/disco e popolamento dati-->
         </ul>
-        <!--/lista dischi-->
     </div>
-    <!--/vue workarea-->
-    
     <!--CDN Vuejs-->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!--/CDN Vuejs-->
     <!--CDN axios js-->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!--/CDN axios js-->
-    <!--file js-->
+    <!--File js-->
     <script src="src/js/main.js"></script>
-    <!--/file js-->
+    <!--/File js-->
 </body>
 </html>

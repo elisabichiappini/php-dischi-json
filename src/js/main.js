@@ -4,19 +4,23 @@ const { createApp } = Vue;
     data() {
       return {
         // array in cui pushare i dati del file.json
-        dischi: []
+        dischi: [],
       }
     },
     // chiamata alla Api per leggere dati e passarli all'array dischi
     methods: {
-      getDischi () {
-        axios.get('server.php').then(data => {
-          console.log(data);
-          this.dischi = data.data;
-        })
+      getDischi() {
+        axios
+        .get('server.php')
+        .then(response => {
+          this.dischi = response.data;
+        });
+      },
+      showDisco(index) {
+        console.log(index);
       }
     },
-    // in created richiamo la funzione così arrivando sull'app ho la lista albums
+    // creo l'area dischi nella fase di vita di creazione
     created() {
       this.getDischi();
     }
