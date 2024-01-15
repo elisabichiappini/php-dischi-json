@@ -11,15 +11,24 @@
 <body class="bg-dark text-white">
     <!--vue workarea-->
     <div id="app" v-cloak class="p-3">
-        <h1 class="text-center p-3">Playlist</h1>
-        <ul class="list-albums d-flex flex-wrap gap-2 text-center">
-            <li v-for="(disco, index) in dischi" class="album no-grow" @click="showDisco(index)">
-                <img :src="disco.poster" :alt="disco.author" class="img-fluid">
-                <h4 class="mt-2">{{ disco.titleCd }}</h4>
-                <h5>{{ disco.author }}</h5>
-                <h6> {{ disco.year }}</h6>
-            </li>
-        </ul>
+        
+        <div v-if="discoCorrente">
+            <div id="discoDetails" class="d-flex justify-center align-center flex-column">
+                <img :src="discoCorrente.poster" :alt="discoCorrente.author" class="ec-disco">
+                <h4 class="mt-2">{{ discoCorrente.titleCd }}</h4>
+                <h5>{{ discoCorrente.author }}</h5>
+                <h6> {{ discoCorrente.year }}</h6>
+            </div>
+        </div>
+        <div v-else>
+            <h1 class="text-center p-3">Playlist</h1>
+            <ul class="list-albums d-flex flex-wrap gap-2 text-center">
+                <li v-for="(disco, index) in dischi" class="album no-grow" @click="showDisco(index)">
+                    <img :src="disco.poster" :alt="disco.author" class="img-fluid">
+                    <h5>{{ disco.author }}</h5>
+                </li>
+            </ul>
+        </div>
     </div>
     <!--CDN Vuejs-->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>

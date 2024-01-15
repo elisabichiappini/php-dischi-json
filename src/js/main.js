@@ -5,6 +5,7 @@ const { createApp } = Vue;
       return {
         // array in cui pushare i dati del file.json
         dischi: [],
+        discoCorrente: null,
       }
     },
     // chiamata alla Api per leggere dati e passarli all'array dischi
@@ -17,7 +18,13 @@ const { createApp } = Vue;
         });
       },
       showDisco(index) {
-        console.log(index);
+        axios
+        .get('server.php', {
+          params: { index }
+        })
+        .then(response => {
+          this.discoCorrente = response.data;
+        });
       }
     },
     // creo l'area dischi nella fase di vita di creazione
