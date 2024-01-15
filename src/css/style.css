@@ -46,7 +46,10 @@ style
     margin: 0 auto;
 }
 
-
+#discoDetails {
+    width: 100%;
+    height: 100vh;
+}
 /*****************
 utilities
 ******************/
