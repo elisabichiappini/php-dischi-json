@@ -6,6 +6,7 @@ const { createApp } = Vue;
         // array in cui pushare i dati del file.json
         dischi: [],
         discoCorrente: null,
+        overlayDisco: false,
       }
     },
     // chiamata alla Api per leggere dati e passarli all'array dischi
@@ -24,7 +25,12 @@ const { createApp } = Vue;
         })
         .then(response => {
           this.discoCorrente = response.data;
+          this.overlayDisco = true;
         });
+      },
+      nascondiOverlay() {
+        this.overlayDisco = false;
+        this.discoCorrente = null;
       }
     },
     // creo l'area dischi nella fase di vita di creazione

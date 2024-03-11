@@ -12,7 +12,7 @@
     <!--vue workarea-->
     <div id="app" v-cloak class="p-3">
         <!--disco selezionato-->
-        <div v-if="discoCorrente">
+        <div v-if="discoCorrente" class="d-flex">
             <!--layout disco singolo-->
             <div id="discoDetails" class="d-flex justify-center align-center flex-column">
                 <img :src="discoCorrente.poster" :alt="discoCorrente.author" class="ec-disco">
@@ -20,9 +20,21 @@
                 <h5>{{ discoCorrente.author }}</h5>
                 <h6> {{ discoCorrente.year }}</h6>
             </div>
+            <div @click="nascondiOverlay" class="close d-flex justify-content-center align-items-center">X</div>
             <!--/layout disco singolo-->
         </div>
         <!--/disco selezionato-->
+
+
+
+
+
+
+
+
+
+
+
         <!--dischi lista-->
         <div v-else>
             <!--layout lista dischi-->
